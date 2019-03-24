@@ -116,7 +116,7 @@ public class TestEvents {
         assertFalse(e.equals((Object)e3));
     }
 
-    /*
+
     @Test
     public void testParticipants() {
         String name = generateRandomString();
@@ -150,6 +150,7 @@ public class TestEvents {
         }
     }
 
+
     @Test
     public void testAudience() {
         Event e = new Event("E1","Whenever","Whatever");
@@ -182,6 +183,7 @@ public class TestEvents {
         assertEquals(1,people.size());
     }
 
+
     @Test
     public void testParty() {
         Party p = new Party("FEUP Caffe", "Tonight!","Party on!");
@@ -206,6 +208,7 @@ public class TestEvents {
         assertEquals(3, e.getAudienceCount());
     }
 
+
     @Test
     public void testUsernames() {
         ArrayList<User> users = new ArrayList<User>();
@@ -228,5 +231,4 @@ public class TestEvents {
 
         assertEquals(","+name+age+",Speaker12,Artist20",s);
     }
-    */
 }
