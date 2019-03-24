@@ -1,0 +1,7 @@
+# numbers
+bin/
+out/
+build/
+# for some reason gitignores are ignoring themselves
+!.gitignore
+
