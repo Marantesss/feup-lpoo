@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
+
 import org.junit.Test;
 
 /*
@@ -179,4 +180,5 @@ public class TestLogicCircuits {
         assertSame(a, c.getVariableByName("x1"));
         assertSame(null, c.getVariableByName("x2"));
     }
+
 }
