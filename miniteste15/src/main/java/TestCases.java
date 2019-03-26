@@ -77,6 +77,7 @@ public class TestCases {
         Room b2 = new Room(b, "104", 1);
     }
 
+
     @Test
     public void testUserAccess() throws Exception  {
         User u1 = new User("Rui");
