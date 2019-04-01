@@ -6,26 +6,30 @@ import java.util.Date;
 import java.util.List;
 
 public class Tree {
-    public Date plantedAt;
-    public String locationLatitude;
-    public String locationLongitude;
-    public String locationName;
+    private Date plantedAt;
+    private Location location;
     private List<Date> appraisalDates;
 
-    public Tree(Date plantedAt, String locationLatitude, String locationLongitude, String locationName){
+    public Tree(Date plantedAt, Location location){
         this.plantedAt = plantedAt;
-        this.setLocation(locationLatitude, locationLongitude, locationName);
+        this.location = location;
         this.appraisalDates = new ArrayList<>();
     }
 
-    public void setLocation(String locationLatitude, String locationLongitude, String locationName){
-        this.locationLatitude = locationLatitude;
-        this.locationLongitude = locationLongitude;
-        this.locationName = locationName;
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public Date getPlantedAt() {
+        return plantedAt;
     }
 
     public String toString() {
-        return "Tree planted at " + this.plantedAt.toString() + " in location " + this.locationLatitude + "," + this.locationLongitude + " (" + this.locationName + ")";
+        return "Tree planted at " + this.plantedAt.toString() + " in location " + this.location.toString();
     }
 
     void addAppraisal(Date appraisalDate) {
@@ -36,9 +40,8 @@ public class Tree {
         return this.appraisalDates;
     }
 
-    public boolean isNextAppraisalOverdue(){
-        Date today = new Date();
-        Date latestAppraisalDate = today;
+    public Date getLatestAppraisalDate() {
+        Date latestAppraisalDate = new Date();
 
         if (this.appraisalDates.size() > 0) {
             latestAppraisalDate = this.appraisalDates.get(0);
@@ -48,6 +51,13 @@ public class Tree {
                 latestAppraisalDate = appraisalDate;
             }
         }
+
+        return latestAppraisalDate;
+    }
+
+    public boolean isNextAppraisalOverdue() {
+        Date today = new Date();
+        Date latestAppraisalDate = this.getLatestAppraisalDate();
 
         // Calculate next appraisal date
         Calendar calendar = Calendar.getInstance();
