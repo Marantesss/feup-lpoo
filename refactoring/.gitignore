@@ -1,0 +1,6 @@
+# miniteste 16
+bin/
+out/
+build/
+# for some reason gitignores are ignoring themselves
+!.gitignore
